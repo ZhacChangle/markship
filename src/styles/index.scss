@@ -1,0 +1,39 @@
+// import 的时候不用添加下划线 下划线表示该 scss 文件不可以单独的被编译成 css 文件 只能通过 import 语法导入
+// config
+@import 'variables';
+
+// layout
+@import 'reboot';
+
+// mixin
+@import 'mixin';
+
+// button
+@import '../components/Button/style';
+
+// menu
+@import '../components/Menu/style';
+
+// icon
+@import '../components/Icon/style';
+
+// animation
+@import './animation';
+
+// input
+@import '../components/Input/style';
+
+// AutoComplete
+@import '../components/AutoComplete/style';
+
+// Upload
+@import '../components/Upload/style';
+
+// Progress 
+@import "../components/Progress/style";
+
+// Select
+@import '../components/Select/style';
+
+// Form
+@import '../components/Form/style'
