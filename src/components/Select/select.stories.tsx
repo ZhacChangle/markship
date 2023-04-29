@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import Select from './index'
 export default {
-  title: '第九章作业：Select',
+  title: 'Select',
   component: Select,
   id: 'Select',
   subcomponents: { 'Option': Select.Option },
@@ -29,7 +29,7 @@ export const ADefaultSelect: ComponentStory<typeof Select> = (args) => (
     <Select.Option value="nihao5" />
   </Select>
 )
-ADefaultSelect.storyName = '默认的Select'
+ADefaultSelect.storyName = 'Default Select'
 export const BMultipleSelect: ComponentStory<typeof Select> = (args) => (
   <Select
     {...args}
@@ -43,7 +43,7 @@ export const BMultipleSelect: ComponentStory<typeof Select> = (args) => (
     <Select.Option value="viking2" />
   </Select>
 )
-BMultipleSelect.storyName = '支持多选的 Select'
+BMultipleSelect.storyName = 'Multiple Select'
 export const CDisabledSelect: ComponentStory<typeof Select> = (args) => (
   <Select
     {...args}
@@ -55,4 +55,4 @@ export const CDisabledSelect: ComponentStory<typeof Select> = (args) => (
     <Select.Option value="nihao3" />
   </Select>
 )
-CDisabledSelect.storyName = '被禁用的 Select'
+CDisabledSelect.storyName = 'Disabled Select'
