@@ -37,7 +37,7 @@ export const SelectContext = createContext<ISelectContext>({ selectedValues: [] 
  * ### 引用方法
  * 
  * ~~~js
- * import { Select } from 'vikingship'
+ * import { Select } from 'markship'
  * // 然后可以使用 <Select> 和 <Select.Option>
  * ~~~
  */

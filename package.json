@@ -1,6 +1,6 @@
 {
   "name": "markship",
-  "version": "0.1.1",
+  "version": "0.2.2",
   "private": false,
   "description": "React components library",
   "author": "mark_cl",
@@ -13,6 +13,11 @@
     "UI",
     "React"
   ],
+  "homepage": "https://zhacchangle.github.io/markship/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZhacChangle/markship"
+  },
   "files": [
     "dist"
   ],
@@ -39,19 +44,21 @@
     "start": "react-scripts start",
     "clean": "rimraf ./dist",
     "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "test:nowatch": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
-    "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
+    "prepublishOnly": "npm run build",
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d storybook-static git@github.com:ZhacChangle/markship.git -b gh-pages"
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"npm run test:nowatch && npm run lint"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:nowatch && npm run lint"
     }
   },
   "eslintConfig": {
@@ -105,6 +112,7 @@
     "babel-jest": "^29.4.1",
     "babel-plugin-named-exports-order": "^0.0.2",
     "cross-env": "^7.0.3",
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.3",
     "node-sass": "^8.0.0",
     "prop-types": "^15.8.1",
